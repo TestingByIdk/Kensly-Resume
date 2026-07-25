@@ -1,259 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Interactive resume for Kensly Desir." />
-  <title>Kensly Desir | Resume</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kensly Desir | Resume</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <a href="#home" class="brand" aria-label="Kensly Desir home">
-      <span class="brand-mark">KD</span>
-      <span>Kensly Desir</span>
-    </a>
+<header class="site-header">
+  <div class="brand"><div class="brand-mark">KD</div><div><h1>Kensly Desir</h1><p>Reliable • Adaptable • Quick Learner</p></div></div>
+  <nav><a href="#about">About</a><a href="#experience">Experience</a><a href="#fit">Job Fit</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+</header>
 
-    <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#fit">Job Fit</a>
-      <a href="#skills">Skills</a>
-    </nav>
+<main>
+<section class="hero" id="about">
+  <div>
+    <span class="eyebrow">Interactive Resume</span>
+    <h2>Ready to bring practical experience to a strong team.</h2>
+    <p>Kensly is a high school graduate with hands-on experience in food service, community programs, volunteer work, and construction support. He is dependable, willing to learn, and comfortable working in active team environments.</p>
+    <div class="actions"><a class="primary" href="#experience">View Experience</a><a class="secondary" href="#contact">Contact</a></div>
+    <div class="contact-strip"><span>K1L 5X8</span><a href="mailto:kenslydesir@gmail.com">kenslydesir@gmail.com</a><a href="tel:+16138042531">(613) 804-2531</a></div>
+  </div>
+  <aside>
+    <span class="small">Open to full-time opportunities</span>
+    <h3>At a glance</h3>
+    <p><b>Languages</b><br>English, French, Creole</p>
+    <p><b>Education</b><br>High School Diploma</p>
+    <p><b>Current Experience</b><br>Kitchen Help / Dishwasher</p>
+  </aside>
+</section>
 
-    <a class="header-button" href="#contact">Contact</a>
-  </header>
+<section class="section" id="experience">
+  <div class="heading"><span>Experience</span><h2>Hands-on work across different environments</h2></div>
+  <article><div class="meta"><b>Current</b><span>2024–Present</span></div><h3>Sodexo</h3><p class="role">Kitchen Help / Dishwasher</p><ul><li>Managed food inventory, dating, and stock levels.</li><li>Prepared food items and supported cooking processes.</li><li>Maintained cleanliness, sanitation, and food safety standards.</li><li>Followed instructions and workplace safety procedures.</li></ul></article>
+  <article><div class="meta"><b>Co-op Placement</b><span>2023</span></div><h3>Kelsey's</h3><p class="role">Restaurant Placement</p><ul><li>Supported cleanliness and organization throughout the restaurant.</li><li>Handled dishes, garbage, restocking, and sanitization tasks.</li><li>Practiced correct food portioning to help reduce waste.</li></ul></article>
+  <article><div class="meta"><b>Construction Placement</b><span>2023</span></div><h3>JP Construction</h3><p class="role">Construction Support</p><ul><li>Assisted with drywall and ceiling work.</li><li>Completed sanding, cleaning, and general support tasks.</li><li>Learned to properly use tools and equipment.</li><li>Helped with door installation and job-site organization.</li></ul></article>
+  <article><div class="meta"><b>Community</b><span>2014–2020</span></div><h3>CityKidz</h3><p class="role">Junior Leader</p><ul><li>Helped coordinate safe and engaging activities for children.</li><li>Supported snack service, cleanliness, and program guidelines.</li><li>Encouraged teamwork and participation during activities.</li></ul></article>
+  <article><div class="meta"><b>Volunteer</b><span>2017–2020</span></div><h3>Junior Youth</h3><p class="role">Volunteer</p><ul><li>Participated in community cleanup projects.</li><li>Worked with groups during book clubs and discussions.</li><li>Helped with door-to-door fundraising for people in need.</li><li>Contributed to short films about teenage experiences.</li></ul></article>
+</section>
 
-  <main>
-    <section class="hero section" id="home">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">RESUME · K1L 5X8</p>
-        <h1>Kensly<br><span>Desir.</span></h1>
-        <p class="hero-subtitle">Reliable · Hardworking · Quick Learner</p>
-        <p class="hero-lead">
-          A high school graduate with practical experience in food service, restaurant support,
-          construction assistance, community programs, and volunteer work.
-        </p>
-        <div class="hero-actions">
-          <a href="#experience" class="button primary">View experience</a>
-          <a href="#fit" class="button secondary">See job fit</a>
-        </div>
-      </div>
+<section class="section" id="fit">
+  <div class="heading"><span>Job Fit</span><h2>See how Kensly's experience connects to different roles</h2><p>Select a job area below.</p></div>
+  <div class="fit-layout">
+    <div class="tabs">
+      <button class="fit-tab active" data-fit="kitchen">Kitchen & Restaurant</button>
+      <button class="fit-tab" data-fit="construction">Construction & Labour</button>
+      <button class="fit-tab" data-fit="warehouse">Warehouse & Stock</button>
+      <button class="fit-tab" data-fit="retail">Retail & Service</button>
+      <button class="fit-tab" data-fit="community">Community & Support</button>
+    </div>
+    <div class="fit-panel" id="fit-panel"><span class="small red">Kitchen & Restaurant</span><h3>Already comfortable in fast-paced food environments.</h3><ul><li>Current kitchen and dishwashing experience.</li><li>Food preparation and inventory support.</li><li>Sanitation and food safety awareness.</li><li>Restaurant co-op experience at Kelsey's.</li></ul></div>
+  </div>
+</section>
 
-      <aside class="hero-summary reveal delay-one">
-        <div class="summary-line">
-          <span>Current role</span>
-          <strong>Sodexo</strong>
-        </div>
-        <div class="summary-line">
-          <span>Education</span>
-          <strong>High School Diploma</strong>
-        </div>
-        <div class="summary-line">
-          <span>Languages</span>
-          <strong>English · French · Creole</strong>
-        </div>
-        <div class="summary-line">
-          <span>Location</span>
-          <strong>K1L 5X8</strong>
-        </div>
-        <div class="summary-note">
-          <span class="dot"></span>
-          Open to full-time opportunities
-        </div>
-      </aside>
-    </section>
+<section class="section" id="skills">
+  <div class="heading"><span>Skills</span><h2>Practical strengths</h2></div>
+  <div class="skills">
+    <div>Team Collaboration</div><div>Organization</div><div>Time Management</div><div>Leadership Experience</div>
+    <div>Multitasking</div><div>Oral Communication</div><div>Child Engagement</div><div>Motivated Learner</div>
+    <div>Food Safety Awareness</div><div>Inventory Support</div><div>Physical Work</div><div>Quick Learner</div>
+  </div>
+  <div class="education"><div><span class="small red">Education</span><h3>High School Diploma</h3><p>Saint Joseph High School</p></div><b>2025</b></div>
+</section>
 
-    <section class="section" id="about">
-      <div class="section-heading reveal">
-        <p>01 / ABOUT</p>
-        <h2>A practical worker with experience across different environments.</h2>
-      </div>
+<section class="contact" id="contact"><div><span class="small light">Contact</span><h2>Get in touch with Kensly</h2><p>Available for full-time opportunities and ready to discuss where he could be a good fit.</p></div><div class="contact-actions"><a href="mailto:kenslydesir@gmail.com">Email Kensly</a><a href="tel:+16138042531">Call (613) 804-2531</a></div></section>
+</main>
 
-      <div class="about-grid">
-        <article class="panel reveal">
-          <h3>Profile</h3>
-          <p>
-            Kensly brings hands-on experience from kitchens, restaurant support, construction,
-            youth programs, and community volunteering. His background shows organization,
-            teamwork, responsibility, communication, and a willingness to learn new tasks.
-          </p>
-        </article>
-
-        <article class="panel accent-panel reveal delay-one">
-          <h3>Work style</h3>
-          <div class="trait-list">
-            <span>Responsible</span>
-            <span>Organized</span>
-            <span>Team-oriented</span>
-            <span>Motivated learner</span>
-            <span>Adaptable</span>
-            <span>Comfortable with active work</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="experience">
-      <div class="section-heading reveal">
-        <p>02 / EXPERIENCE</p>
-        <h2>What I’ve done.</h2>
-      </div>
-
-      <div class="timeline">
-        <article class="timeline-item reveal">
-          <div class="timeline-date">2024 — Present</div>
-          <div class="timeline-content">
-            <p class="role-label">CURRENT ROLE</p>
-            <h3>Sodexo</h3>
-            <h4>Kitchen Help / Dishwasher</h4>
-            <p>Supports food preparation, inventory, sanitation, stock organization, and safe kitchen operations.</p>
-            <div class="tags"><span>Food Prep</span><span>Inventory</span><span>Sanitation</span><span>Safety</span></div>
-          </div>
-        </article>
-
-        <article class="timeline-item reveal">
-          <div class="timeline-date">2023</div>
-          <div class="timeline-content">
-            <p class="role-label">SCHOOL CO-OP</p>
-            <h3>Kelsey's</h3>
-            <h4>Restaurant Support</h4>
-            <p>Helped maintain cleanliness, complete dishwashing, restock supplies, organize work areas, sanitize equipment, and portion food correctly.</p>
-            <div class="tags"><span>Restocking</span><span>Dishwashing</span><span>Organization</span><span>Food Portioning</span></div>
-          </div>
-        </article>
-
-        <article class="timeline-item reveal">
-          <div class="timeline-date">2023</div>
-          <div class="timeline-content">
-            <p class="role-label">SHORT-TERM PLACEMENT</p>
-            <h3>JP Construction</h3>
-            <h4>Construction Support</h4>
-            <p>Assisted with cleaning, drywall and ceiling support, sanding, door installation, and proper use of tools and equipment.</p>
-            <div class="tags"><span>Tools</span><span>Sanding</span><span>Drywall Support</span><span>Physical Work</span></div>
-          </div>
-        </article>
-
-        <article class="timeline-item reveal">
-          <div class="timeline-date">2014 — 2020</div>
-          <div class="timeline-content">
-            <p class="role-label">COMMUNITY</p>
-            <h3>CityKidz</h3>
-            <h4>Junior Leader</h4>
-            <p>Helped coordinate safe activities for children, support events, serve snacks, maintain cleanliness, and encourage teamwork.</p>
-            <div class="tags"><span>Leadership</span><span>Children</span><span>Activities</span><span>Teamwork</span></div>
-          </div>
-        </article>
-
-        <article class="timeline-item reveal">
-          <div class="timeline-date">2017 — 2020</div>
-          <div class="timeline-content">
-            <p class="role-label">VOLUNTEER</p>
-            <h3>Junior Youth</h3>
-            <h4>Community Volunteer</h4>
-            <p>Participated in neighbourhood cleanups, book discussions, creative projects, and door-to-door fundraising.</p>
-            <div class="tags"><span>Community</span><span>Communication</span><span>Fundraising</span><span>Collaboration</span></div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="fit">
-      <div class="section-heading reveal">
-        <p>03 / JOB FIT</p>
-        <h2>Choose a job area.</h2>
-      </div>
-
-      <div class="fit-box reveal">
-        <div class="fit-tabs" role="tablist" aria-label="Job areas">
-          <button class="fit-tab active" data-fit="kitchen" role="tab" aria-selected="true">Kitchen</button>
-          <button class="fit-tab" data-fit="construction" role="tab" aria-selected="false">Construction</button>
-          <button class="fit-tab" data-fit="warehouse" role="tab" aria-selected="false">Warehouse</button>
-          <button class="fit-tab" data-fit="retail" role="tab" aria-selected="false">Retail</button>
-          <button class="fit-tab" data-fit="community" role="tab" aria-selected="false">Community</button>
-        </div>
-
-        <div class="fit-content">
-          <p class="fit-kicker" id="fit-label">KITCHEN & RESTAURANT</p>
-          <h3 id="fit-title">Experience that already matches the environment.</h3>
-          <p id="fit-description"></p>
-          <ul id="fit-points" class="fit-points"></ul>
-          <p class="fit-source" id="fit-source"></p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="skills">
-      <div class="section-heading reveal">
-        <p>04 / SKILLS</p>
-        <h2>Useful skills that transfer.</h2>
-      </div>
-
-      <div class="skills-grid">
-        <article class="skill-group reveal">
-          <h3>Workplace</h3>
-          <p>Organization, time management, multitasking, responsibility, teamwork, and quick learning.</p>
-        </article>
-        <article class="skill-group reveal">
-          <h3>Food Service</h3>
-          <p>Food preparation support, inventory, restocking, dishwashing, sanitation, and safety procedures.</p>
-        </article>
-        <article class="skill-group reveal">
-          <h3>Hands-On</h3>
-          <p>Tool familiarity, sanding, drywall assistance, physical work, cleanup, and maintaining organized work areas.</p>
-        </article>
-        <article class="skill-group reveal">
-          <h3>People</h3>
-          <p>Oral communication, child engagement, leadership experience, empathy, and group collaboration.</p>
-        </article>
-      </div>
-
-      <div class="resume-details reveal">
-        <div>
-          <span>Education</span>
-          <strong>High School Diploma · Saint Joseph High School · 2025</strong>
-        </div>
-        <div>
-          <span>Languages</span>
-          <strong>English · French · Creole</strong>
-        </div>
-        <div>
-          <span>Certification</span>
-          <strong>Food Handler · Work in Progress</strong>
-        </div>
-      </div>
-    </section>
-
-    <section class="section contact" id="contact">
-      <div class="contact-box reveal">
-        <div>
-          <p class="contact-label">CONTACT</p>
-          <h2>Let’s connect.</h2>
-          <p>K1L 5X8 · Available for employment opportunities.</p>
-        </div>
-
-        <div class="contact-actions">
-          <a href="mailto:kenslydesir@gmail.com" class="contact-link">
-            <span>Email</span>
-            <strong>kenslydesir@gmail.com</strong>
-          </a>
-          <a href="tel:+13439617952" class="contact-link">
-            <span>Phone</span>
-            <strong>(613) 804-2531</strong>
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <span>Kensly Desir</span>
-    <span>Interactive Resume · 2026</span>
-  </footer>
-
-  <script src="script.js"></script>
+<footer><span>Kensly Desir</span><span>K1L 5X8</span></footer>
+<script src="script.js"></script>
 </body>
 </html>

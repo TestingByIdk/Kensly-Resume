@@ -1,102 +1,12 @@
-const fitData = {
-  kitchen: {
-    label: "KITCHEN & RESTAURANT",
-    title: "Already comfortable in active kitchen environments.",
-    score: 5,
-    description: "Current Sodexo experience plus a restaurant co-op gives Kensly practical familiarity with cleanliness, food support, stock, and following procedures.",
-    points: ["Food preparation support", "Dishwashing & sanitation", "Inventory and restocking", "Food portioning", "Following safety procedures"],
-    source: "Relevant experience: Sodexo + Kelsey's"
-  },
-  construction: {
-    label: "CONSTRUCTION & LABOUR",
-    title: "Hands-on experience and comfortable with physical work.",
-    score: 5,
-    description: "Kensly has practical construction-support experience and has worked with tools, materials, cleanup, sanding, drywall, and door installation assistance.",
-    points: ["Tool and equipment familiarity", "Sanding work", "Drywall support", "Door installation assistance", "Cleaning active work areas"],
-    source: "Relevant experience: JP Construction"
-  },
-  warehouse: {
-    label: "WAREHOUSE & STOCK",
-    title: "Organized, active, and familiar with inventory tasks.",
-    score: 4,
-    description: "His food-service background includes inventory management, stock levels, proper dating, restocking, organization, and maintaining safe work areas.",
-    points: ["Inventory support", "Restocking", "Organization", "Time management"],
-    source: "Relevant experience: Sodexo + Kelsey's"
-  },
-  retail: {
-    label: "RETAIL & SERVICE",
-    title: "A strong base for customer-facing and team-based work.",
-    score: 4,
-    description: "While the provided resumes do not list a dedicated retail role, Kensly brings communication, teamwork, organization, and experience working in active public-facing environments.",
-    points: ["Oral communication", "Team collaboration", "Multitasking", "Quick learning"],
-    source: "Transferable strengths from food service + community roles"
-  },
-  community: {
-    label: "COMMUNITY & SUPPORT",
-    title: "Years of experience helping, communicating, and participating.",
-    score: 5,
-    description: "CityKidz and Junior Youth gave Kensly experience with children, activities, teamwork, community projects, fundraising, and group communication.",
-    points: ["Child engagement", "Leadership experience", "Fundraising", "Group communication", "Community projects"],
-    source: "Relevant experience: CityKidz + Junior Youth"
-  }
+const fitData={
+kitchen:["Kitchen & Restaurant","Already comfortable in fast-paced food environments.",["Current kitchen and dishwashing experience.","Food preparation and inventory support.","Sanitation and food safety awareness.","Restaurant co-op experience at Kelsey's."]],
+construction:["Construction & Labour","Hands-on experience with physical job-site tasks.",["Assisted with drywall and ceiling work.","Completed sanding and cleanup tasks.","Learned to properly use tools and equipment.","Helped with door installation and site organization."]],
+warehouse:["Warehouse & Stock","Experience that transfers well to organized stock environments.",["Managed food inventory and stock levels.","Restocked supplies during restaurant placement.","Strong organizational and time-management skills.","Comfortable with physical and repetitive work."]],
+retail:["Retail & Service","A solid base for customer-facing and support roles.",["Strong oral communication.","Experience following instructions and working with teams.","Reliable in active, task-focused environments.","Quick learner who can adapt to new routines."]],
+community:["Community & Support","Years of experience helping in youth and community programs.",["Junior Leader experience with children.","Volunteer fundraising and neighbourhood cleanup work.","Group discussion and teamwork experience.","Leadership, empathy, and communication strengths."]]
 };
-
-const fitTabs = document.querySelectorAll('.fit-tab');
-const fitLabel = document.getElementById('fit-label');
-const fitTitle = document.getElementById('fit-title');
-const fitScore = document.getElementById('fit-score');
-const fitDescription = document.getElementById('fit-description');
-const fitPoints = document.getElementById('fit-points');
-const fitSource = document.getElementById('fit-source');
-
-function renderFit(key) {
-  const data = fitData[key];
-  fitLabel.textContent = data.label;
-  fitTitle.textContent = data.title;
-  fitScore.textContent = data.score;
-  fitDescription.textContent = data.description;
-  fitSource.textContent = data.source;
-  fitPoints.innerHTML = data.points.map(point => `<li>${point}</li>`).join('');
-}
-
-fitTabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    fitTabs.forEach(item => {
-      item.classList.remove('active');
-      item.setAttribute('aria-selected', 'false');
-    });
-    tab.classList.add('active');
-    tab.setAttribute('aria-selected', 'true');
-    renderFit(tab.dataset.fit);
-  });
-});
-
-renderFit('kitchen');
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-const toast = document.getElementById('toast');
-let toastTimer;
-
-document.querySelectorAll('[data-copy]').forEach(button => {
-  button.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(button.dataset.copy);
-      toast.textContent = 'Copied to clipboard';
-    } catch {
-      toast.textContent = button.dataset.copy;
-    }
-    toast.classList.add('show');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove('show'), 1800);
-  });
-});
+document.querySelectorAll(".fit-tab").forEach(btn=>btn.addEventListener("click",()=>{
+document.querySelectorAll(".fit-tab").forEach(x=>x.classList.remove("active"));btn.classList.add("active");
+const d=fitData[btn.dataset.fit];
+document.querySelector("#fit-panel").innerHTML=`<span class="small red">${d[0]}</span><h3>${d[1]}</h3><ul>${d[2].map(x=>`<li>${x}</li>`).join("")}</ul>`;
+}));
