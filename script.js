@@ -18,3 +18,66 @@ document.querySelectorAll(".fit-tab").forEach(btn=>{
     `;
   });
 });
+const contactPopup = document.querySelector("#contactPopup");
+const contactPopupIcon = document.querySelector("#contactPopupIcon");
+const contactPopupLabel = document.querySelector("#contactPopupLabel");
+const contactPopupTitle = document.querySelector("#contactPopupTitle");
+const contactPopupValue = document.querySelector("#contactPopupValue");
+const copyContactButton = document.querySelector("#copyContactButton");
+const openContactButton = document.querySelector("#openContactButton");
+const contactPopupStatus = document.querySelector("#contactPopupStatus");
+
+let selectedContactValue = "";
+
+function openContactPopup(link) {
+  const isEmail = link.href.startsWith("mailto:");
+  selectedContactValue = isEmail
+    ? link.href.replace("mailto:", "")
+    : link.href.replace("tel:", "");
+
+  contactPopupIcon.textContent = isEmail ? "✉" : "☎";
+  contactPopupLabel.textContent = isEmail ? "Email" : "Phone";
+  contactPopupTitle.textContent = isEmail ? "Email Kensly" : "Call Kensly";
+  contactPopupValue.textContent = isEmail
+    ? selectedContactValue
+    : "(613) 804-2531";
+  openContactButton.textContent = isEmail ? "Open Email" : "Start Call";
+  openContactButton.href = link.href;
+  contactPopupStatus.textContent = "";
+
+  contactPopup.classList.add("open");
+  contactPopup.setAttribute("aria-hidden", "false");
+  document.body.classList.add("popup-open");
+}
+
+function closeContactPopup() {
+  contactPopup.classList.remove("open");
+  contactPopup.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("popup-open");
+}
+
+document.querySelectorAll('a[href^="mailto:"], a[href^="tel:"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    openContactPopup(link);
+  });
+});
+
+document.querySelectorAll("[data-popup-close]").forEach((element) => {
+  element.addEventListener("click", closeContactPopup);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && contactPopup.classList.contains("open")) {
+    closeContactPopup();
+  }
+});
+
+copyContactButton.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(selectedContactValue);
+    contactPopupStatus.textContent = "Copied!";
+  } catch {
+    contactPopupStatus.textContent = "Could not copy automatically.";
+  }
+});
